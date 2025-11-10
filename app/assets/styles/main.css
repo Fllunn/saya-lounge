@@ -2,3 +2,17 @@ a {
   text-decoration: none !important;
   color: inherit !important;
 }
+
+:root {
+  --v-font-family: 'Caviar Dreams', system-ui, sans-serif;
+}
+
+html, body, #__nuxt, .v-application {
+  font-family: var(--v-font-family);
+}
+
+/* Font utility helpers for per-block variants */
+.font-regular { font-weight: 400; font-style: normal; }
+.font-italic { font-style: italic; }
+.font-bold { font-weight: 700; }
+.font-bold-italic { font-weight: 700; font-style: italic; }
