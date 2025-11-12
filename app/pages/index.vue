@@ -44,8 +44,10 @@
     </v-col>
 
     <v-col cols="12">
-      <v-row class="d-flex justify-center align-center py-8 pa-md-8">
-        <v-img src="/images/reception.png" class="h-100 d-flex justify-center align-center user-select-none reception-img" draggable="false"></v-img>
+      <v-row class="d-flex justify-center align-center my-16 pa-md-8">
+        <v-img src="/images/reception.png"
+          class="h-100 d-flex justify-center align-center user-select-none reception-img" cover
+          draggable="false"></v-img>
       </v-row>
       <v-row>
         <v-col cols="12" md="12" class="d-flex justify-center align-center pa-8">
@@ -53,7 +55,7 @@
             <h1>«САЯ»&nbsp;—&nbsp;это тень, в которой вкус раскрывается иначе.</h1>
             <h2>
               <br>
-              Здесь коктейль&nbsp;—&nbsp;это не напиток, а диалог. Мы соединяем классику с ритуалами нового времени: 
+              Здесь коктейль&nbsp;—&nbsp;это не напиток, а диалог. Мы соединяем классику с ритуалами нового времени:
               работаем со светом, ароматами и формой подачи, чтобы каждая встреча оставалась в памяти.<br>
               <br>
               Наши коктейли&nbsp;—&nbsp;для тех, кто ценит детали и не готов идти на компромисс.
@@ -80,8 +82,9 @@
 }
 
 .reception-img {
-    position: relative;
-    overflow: hidden;
+  position: relative;
+  overflow: hidden;
+  min-height: 300px;
 }
 
 .reception-img::after {
