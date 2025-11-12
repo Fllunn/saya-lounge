@@ -45,7 +45,7 @@
 
     <v-col cols="12">
       <v-row class="d-flex justify-center align-center py-8 pa-md-8">
-        <v-img src="/images/reception.png" class="h-100 d-flex justify-center align-center user-select-none" draggable="false"></v-img>
+        <v-img src="/images/reception.png" class="h-100 d-flex justify-center align-center user-select-none reception-img" draggable="false"></v-img>
       </v-row>
       <v-row>
         <v-col cols="12" md="12" class="d-flex justify-center align-center pa-8">
@@ -77,5 +77,18 @@
   text-decoration: underline !important;
   text-decoration-thickness: 1px !important;
   text-underline-offset: 2px !important;
+}
+
+.reception-img {
+    position: relative;
+    overflow: hidden;
+}
+
+.reception-img::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  pointer-events: none;
 }
 </style>
