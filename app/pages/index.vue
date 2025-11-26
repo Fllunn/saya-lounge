@@ -1,6 +1,16 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useGallery } from '@/composables/useGallery'
+
+const { images } = useGallery()
+</script>
+
 <template>
   <v-row>
+    <!-- <v-col class="fill-height-block" cols="12">
+      <v-img src="/images/first-section.png" class="h-100 d-flex justify-center align-center" draggable="false" cover>
+      </v-img>
+    </v-col> -->
+
     <v-col class="full-height-block" cols="12">
       <v-img src=" /images/first-section.png" class="h-100 d-flex justify-center align-center" draggable="false" cover>
         <v-row class="d-flex justify-center align-center">
@@ -14,7 +24,7 @@
     <v-col cols="12">
       <v-row>
         <v-col cols="12" md="6" class="d-flex justify-center align-center pa-8">
-          <v-col cols="12" md="6" class="justify-center align-center">
+          <v-col cols="12" md="10" class="justify-center align-center py-8">
             <h1>BOOKING</h1>
             <h2>
               <br>
@@ -30,13 +40,16 @@
               <a href="tel:+79581413321">✆&nbsp;+7&nbsp;958&nbsp;141‑33‑21</a>
             </h2>
 
-            <v-btn class="booking-btn mt-8" href="https://t.me/" target="_blank">
+            <v-col class="pt-2">
+              <v-btn class="booking-btn" href="https://t.me/" target="_blank">
               Провести свое мероприятие
-            </v-btn>
+              </v-btn>
+            </v-col>
+            
           </v-col>
         </v-col>
-        <v-col cols="12" md="6" class="d-flex justify-center align-center">
-          <v-img src="/images/white-cocktail.png" class="h-100 d-flex justify-center align-center user-select-none"
+        <v-col cols="12" md="6" class="d-flex justify-center align-center pt-2 pa-8">
+          <v-img src="/images/dark-cocktail.jpg" class="h-100 d-flex justify-center align-center user-select-none"
             draggable="false"></v-img>
         </v-col>
       </v-row>
@@ -71,27 +84,73 @@
     </v-col>
 
     <v-col cols="12">
-    <v-row>
-      <v-col cols="12" md="6" class="d-flex justify-center align-center pa-8">
-        <v-img src="/images/hand-cocktail-shrimp.jpg" class="h-100 user-select-none" draggable="false" contain></v-img>
-      </v-col>
+      <v-row>
+        <v-col cols="12" md="6" class="d-flex justify-center align-center pa-8">
+          <v-img src="/images/hand-cocktail-shrimp.jpg" class="h-100 user-select-none" draggable="false" contain></v-img>
+        </v-col>
 
-      <v-col cols="12" md="6" class="d-flex flex-column justify-center align-center pa-8">
-        <h2>
-          Сая — хозяйка и дух этого места.
-          <br>
-          <br>
-          Она лесная нимфа, дух чащи, которая воплотилась здесь.<br>
-          Она рождена из тени.
-          <br>
-          <br>
-          Загадочная, как лесная полночь.
-          <br>
-          <br>
-          Она проводит гостей через их вечер, очаровывая и удивляя.
-        </h2>
-      </v-col>
-    </v-row>
+        <v-col cols="12" md="6" class="d-flex flex-column justify-center align-center pa-8">
+          <h2>
+            Сая — хозяйка и дух этого места.
+            <br>
+            <br>
+            Она лесная нимфа, дух чащи, которая воплотилась здесь.<br>
+            Она рождена из тени.
+            <br>
+            <br>
+            Загадочная, как лесная полночь.
+            <br>
+            <br>
+            Она проводит гостей через их вечер, очаровывая и удивляя.
+          </h2>
+        </v-col>
+      </v-row>
+    </v-col>
+
+    <!-- тут должна быть карусель -->
+    <!-- <v-col cols="12">
+      <v-row>
+        <v-col cols="12" md="12" class="d-flex justify-center align-center pa-8">
+          <v-row>
+            <v-col v-for="(img, index) in images" :key="index" cols="12" sm="6" class="d-flex justify-center mb-4 carousel-group">
+              <v-img :src="img" contain class="carousel-img"></v-img>
+            </v-col>
+          </v-row>
+        </v-col>
+      </v-row>
+    </v-col> -->
+
+    <v-col cols="12">
+      <v-row>
+        <v-col cols="12" md="6" class="d-flex justify-center align-center pa-8">
+          <v-col cols="12" md="10" class="justify-center align-center py-8">
+            <h2>
+              Не знаешь, что заказать?
+              <br>
+              Сая поможет!
+              <br>
+              <br>
+              Подберем тебе
+              <br>
+              "тот самый" напиток
+            </h2>
+
+            <v-col cols="12" md="10" class="d-flex align-center py-8">
+              <v-btn class="try-btn" href="https://t.me/" target="_blank">
+              ПОПРОБОВАТЬ!
+              </v-btn>
+            </v-col>
+
+            <h3 class="gray-text">
+              На основе искуственного интеллекта подберем напиток из раздела “Бар”, учитывая ваши предпочтения
+            </h3>
+          </v-col>
+        </v-col>
+        <v-col cols="12" md="6" class="d-flex justify-center align-center pa-8">
+          <v-img src="/images/hand-up.jpg" class="h-100 d-flex justify-center align-center user-select-none"
+            draggable="false"></v-img>
+        </v-col>
+      </v-row>
     </v-col>
 
   </v-row>
@@ -111,22 +170,21 @@
   text-underline-offset: 2px !important;
 }
 
-.reception-img {
-    position: relative;
-    overflow: hidden;
-}
-
-.reception-img::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.3);
-  pointer-events: none;
-}
-
 .booking-btn {
   transition: 0.25s;
   border-radius: 32px !important;
+  text-transform: none !important;
+  font-size: clamp(1rem, 0.7rem + 1.2vw, 1.5rem);
+  font-weight: 400;
+
+  padding: 32px !important;
+  min-height: auto !important;
+  line-height: 1 !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: max-content !important;
 }
 
 .booking-btn:hover {
@@ -150,4 +208,32 @@
   object-fit: cover;
 }
 
+.try-btn {
+  transition: 0.25s;
+  border-radius: 32px !important;
+  text-transform: none !important;
+  font-size: clamp(1rem, 0.7rem + 1.2vw, 1.5rem);
+  font-weight: 400;
+
+  padding: 32px !important;
+  min-height: auto !important;
+  line-height: 1 !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: max-content !important;
+
+  background-color: white !important;
+  color: black !important;
+}
+
+.try-btn:hover {
+  background-color: #646464 !important;
+  color: white !important;
+}
+
+.gray-text {
+  color: #575757;
+}
 </style>

@@ -11,10 +11,10 @@
               О нас
             </NuxtLink>
             <NuxtLink to="/">
-              Контакты
+              Меню
             </NuxtLink>
             <NuxtLink to="/">
-              Меню
+              Контакты
             </NuxtLink>
           </v-col>
         </v-row>
