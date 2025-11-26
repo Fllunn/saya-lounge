@@ -112,8 +112,9 @@
 }
 
 .reception-img {
-    position: relative;
-    overflow: hidden;
+  position: relative;
+  overflow: hidden;
+  min-height: 300px;
 }
 
 .reception-img::after {
