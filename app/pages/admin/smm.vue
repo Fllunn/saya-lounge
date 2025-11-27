@@ -7,21 +7,36 @@ const message = ref<string>("")
 const result = ref<string>("")
 const loading = ref<boolean>(false)
 
+const chatHistory = ref<{ role: 'user' | 'assistant'; content: string }[]>([])
+
 async function sendPrompt() {
   if (!message.value.trim()) return
+
+  const userMessage = message.value.trim()
 
   loading.value = true
   result.value = ""
 
   const { data } = await useFetch<any>("/api/smm-ai", {
     method: "POST",
-    body: { message: message.value.trim() }
+    body: {
+      message: userMessage,
+      chat_history: chatHistory.value
+    }
   })
 
-  console.log(data);
+  const aiResponse = data.value?.content || ""
 
+  // Обновляем историю
+  chatHistory.value.push({ role: "user", content: userMessage })
+  chatHistory.value.push({ role: "assistant", content: aiResponse })
 
-  result.value = data.value?.content || ""
+  // Оставляем только последние 2 пары (4 сообщения)
+  if (chatHistory.value.length > 4) {
+    chatHistory.value = chatHistory.value.slice(-4)
+  }
+
+  result.value = aiResponse
   loading.value = false
   message.value = ""
 }
