@@ -153,6 +153,47 @@ const { images } = useGallery()
       </v-row>
     </v-col>
 
+    <v-col cols="12">
+      <v-row>
+        <v-col cols="4" md="4" class="d-flex justify-center align-center pa-4">
+            <v-btn class="flower-btn" href="https://t.me/" target="_blank">
+              БАР
+            </v-btn>
+        </v-col>
+
+        <v-col cols="4" md="4" class="d-flex justify-center align-center">
+          <v-img src="/icons/saya-flower.png" draggable="false" class="user-select-none flower-icon"></v-img>
+        </v-col>
+
+        <v-col cols="4" md="4" class="d-flex justify-center align-center pa-4">
+            <v-btn class="flower-btn" href="https://t.me/" target="_blank">
+              МЕНЮ
+            </v-btn>
+        </v-col>
+      </v-row>
+    </v-col>
+
+    <v-col class="full-height-block py-8" cols="12">
+      <v-img src="/images/wall-background.png" class="h-100 d-flex justify-center align-end" draggable="false" cover>
+        <v-row class="d-flex justify-center align-start">
+          
+          <v-col cols="6" class="d-flex justify-center align-center pa-8">
+            <h2 class="bar-text">
+              Илья — шеф-бармен
+            </h2>
+          </v-col>
+
+          <v-col cols="6" class="d-flex justify-center align-center pa-8">
+            <h2 class="bar-text">
+              Дмитрий — бармен
+            </h2>
+          </v-col>
+
+          <v-spacer style="height: 230px;"></v-spacer>
+        </v-row>
+      </v-img>
+    </v-col>
+
   </v-row>
 </template>
 <style scoped lang="scss">
@@ -235,5 +276,40 @@ const { images } = useGallery()
 
 .gray-text {
   color: #575757;
+}
+
+.flower-btn {
+  transition: 0.25s;
+  border-radius: 32px !important;
+  text-transform: none !important;
+  font-size: clamp(1rem, 0.7rem + 1.2vw, 1.5rem);
+  font-weight: 400;
+
+  padding: 24px 48px !important;
+  height: clamp(56px, 6vw, 64px) !important;
+  line-height: 1 !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: clamp(200px, 40vw, 320px) !important;
+
+  border: 2px solid #bababa !important;
+}
+
+.flower-btn:hover {
+  background-color: white !important;
+  color: black !important;
+}
+
+.flower-icon {
+  width: clamp(100px, 20vw, 256px);
+  height: auto;
+  max-height: 256px;
+  object-fit: contain; 
+}
+
+.bar-text {
+  font-weight: 700 !important
 }
 </style>
