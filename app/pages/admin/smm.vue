@@ -35,7 +35,7 @@ async function sendPrompt() {
           <v-progress-circular indeterminate color="primary"></v-progress-circular>
         </div>
 
-        <div v-else-if="result" class="post-content" v-html="result"></div>
+        <div v-else-if="result" class="result-content" v-html="result"></div>
 
         <div v-else class="d-flex justify-center align-center h-100">
           <h1>Сделать пост, написать текст</h1>
@@ -69,10 +69,11 @@ async function sendPrompt() {
   overflow-y: scroll;
   padding: 16px;
   box-sizing: border-box;
+}
 
-  .post-content {
-    width: 100%;
-    white-space: pre-wrap;
-  }
+.result-content {
+  width: 100%;
+  white-space: pre-wrap;
+  font-size: clamp(1.125rem, 0.9261rem + 0.5682vw, 1.375rem);
 }
 </style>
